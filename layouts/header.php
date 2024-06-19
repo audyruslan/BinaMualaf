@@ -2,26 +2,18 @@
 session_start();
 require 'functions.php';
 
-$sqlChart = mysqli_query($conn, "SELECT * FROM tb_penyakit");
-$totPenyakit = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_penyakit"));
-$totISPA = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_rekammedis WHERE id_penyakit='6'"));
-$totGASTRITIS = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_rekammedis WHERE id_penyakit='16'"));
-$totDIARE = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_rekammedis WHERE id_penyakit='17'"));
-$totDERMATITIS = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_rekammedis WHERE id_penyakit='18'"));
-$totHIPERTENSI = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_rekammedis WHERE id_penyakit='19'"));
-
 if (isset($_SESSION["login"])) {
     $user = $_SESSION["username"];
     $query = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$user'");
     $admin = mysqli_fetch_assoc($query);
 }
 
-//Total Data Dokter
-$totDokter = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_dokter"));
-//Total Data Pasien
-$totPasien = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_pasien"));
-//Total Data Penyakit
-$totPenyakit = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_penyakit"));
+//Total Data Alternatif
+$totAlternatif = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_alternatif"));
+//Total Data Kriteria
+$totKriteria = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_kriteria"));
+//Total Data Training
+$totTraining = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_training"));
 //Total Data Admin
 $totAdmin = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_user"));
 ?>
@@ -51,10 +43,8 @@ $totAdmin = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_user"));
     <meta name="theme-color" content="#ffffff">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Tinker admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="description" content="Tinker admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="LEFT4CODE">
     <title><?= $title; ?> - MCI Peduli</title>
     <!-- BEGIN: CSS Assets-->

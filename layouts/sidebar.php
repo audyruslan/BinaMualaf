@@ -20,6 +20,19 @@
                 <div class="side-menu__title"> Alternatif </div>
             </a>
         </li>
+        <li>
+            <a href="kriteria.php" class="side-menu <?php if ($menu == "Kriteria") echo "side-menu--active"; ?>">
+                <div class="side-menu__icon"> <i data-lucide="plus-square"></i> </div>
+                <div class="side-menu__title"> Kriteria </div>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="sub-kriteria.php"
+                class="side-menu <?php if ($menu == "Sub Kriteria") echo "side-menu--active"; ?>">
+                <div class="side-menu__icon"> <i data-lucide="plus-square"></i> </div>
+                <div class="side-menu__title">Sub Kriteria </div>
+            </a>
+        </li> -->
 
         <?php
         $sql = mysqli_query($conn, "SELECT * FROM tb_menu WHERE menu = 'Algoritma'");
@@ -27,14 +40,16 @@
         if ($menuControl["status"] != 0) {
         ?>
         <li>
-            <a href="javascript:;" class="side-menu">
+            <a href="javascript:;"
+                class="side-menu <?php if ($menu == "Data Training") echo "side-menu__sub-open side-menu--open"; ?>">
                 <div class="side-menu__icon"> <i data-lucide="code"></i> </div>
                 <div class="side-menu__title"> Algoritma-KNN </div>
                 <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
             </a>
             <ul class="">
                 <li>
-                    <a href="data_training.php" class="side-menu">
+                    <a href="data_training.php"
+                        class="side-menu <?php if ($menu == "Data Training" || $menu == "Tambah Training") echo "side-menu--active"; ?>">
                         <div class="side-menu__icon"> <i data-lucide="circle"></i> </div>
                         <div class="side-menu__title"> Data Training </div>
                     </a>

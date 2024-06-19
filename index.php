@@ -107,7 +107,7 @@ if (isset($_POST["login"])) {
                 <div class="my-auto">
                     <img alt="Midone - HTML Admin Template" class="-intro-x w-1/2 -mt-16" src="dist/images/chart2.svg">
                     <div class="-intro-x text-white font-medium text-4xl leading-tight mt-10">
-                        Sistem Informasi Klasifikasi <br> Kelayakan Penerimaan Bantuan <br> Pada Binaan Mualaf Center
+                        Sistem Informasi Klasifikasi <br> Kelayakan Penerimaan Bantuan <br> Pada Binaan MCI
                         Peduli.
                     </div>
                     <div class="-intro-x mt-5 text-lg text-white text-opacity-70 dark:text-slate-400">Klasifikasi
@@ -124,7 +124,7 @@ if (isset($_POST["login"])) {
                         Silahkan Masuk
                     </h2>
                     <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">Sistem Informasi
-                        Klasifikasi Kelayakan Penerimaan Bantuan Pada Binaan Mualaf Center Peduli.</div>
+                        Klasifikasi Kelayakan Penerimaan Bantuan Pada Binaan MCI Peduli.</div>
                     <?php if (isset($_SESSION['error'])) { ?>
                     <div class="alert alert-danger alert-dismissible show flex items-center mt-2 mb-2" role="alert"> <i
                             data-lucide="alert-octagon" class="w-6 h-6 mr-2"></i> <?= $_SESSION['error'];  ?> <button
@@ -152,8 +152,8 @@ if (isset($_POST["login"])) {
                         <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                             <button type="submit" name="login"
                                 class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top">Masuk</button>
-                            <a href="register.php"
-                                class="btn btn-outline-secondary py-3 px-4 w-full xl:w-32 mt-3 xl:mt-0 align-top">Daftar</a>
+                            <a href="#"
+                                class="btn btn-secndary py-3 px-4 w-full xl:w-32 mt-3 xl:mt-0 align-top">Daftar</a>
                         </div>
                     </form>
                 </div>

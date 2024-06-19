@@ -14,35 +14,11 @@ function query($query)
     return $rows;
 }
 
-// Hapus Data Dokter
-function hapus_dokter($id)
+// Hapus Data Kriteria
+function hapus_kriteria($id)
 {
     global $conn;
-    mysqli_query($conn, "DELETE FROM tb_dokter WHERE id = '$id'");
-    return mysqli_affected_rows($conn);
-}
-
-// Hapus Data Pasien
-function hapus_pasien($id)
-{
-    global $conn;
-    mysqli_query($conn, "DELETE FROM tb_pasien WHERE id = '$id'");
-    return mysqli_affected_rows($conn);
-}
-
-// Hapus Data Penyakit
-function hapus_penyakit($id)
-{
-    global $conn;
-    mysqli_query($conn, "DELETE FROM tb_penyakit WHERE id = '$id'");
-    return mysqli_affected_rows($conn);
-}
-
-// Hapus Data Gejala
-function hapus_gejala($id)
-{
-    global $conn;
-    mysqli_query($conn, "DELETE FROM tb_gejala WHERE id = '$id'");
+    mysqli_query($conn, "DELETE FROM tb_kriteria WHERE kriteria_id = '$id'");
     return mysqli_affected_rows($conn);
 }
 

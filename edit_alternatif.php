@@ -1,5 +1,5 @@
 <?php
-$title = "Edit Alternatif - Puskesmas Bahodopi";
+$title = "Edit Alternatif";
 $menu = "Edit Alternatif";
 require 'layouts/header.php';
 require 'layouts/sidebar_mobile.php';
@@ -25,8 +25,7 @@ require 'layouts/sidebar.php';
         <div class="intro-y col-span-12 lg:col-span-6">
             <!-- BEGIN: Vertical Form -->
             <div class="intro-y box">
-                <div
-                    class="flex flex-col sm:flex-row items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
+                <div class="flex flex-col sm:flex-row items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
                     <h2 class="font-medium text-base mr-auto">
                         Form Data Ubah Alternatif
                     </h2>
@@ -36,9 +35,7 @@ require 'layouts/sidebar.php';
                         <div class="col-span-12 lg:col-span-6">
                             <div>
                                 <label for="nama_binaan" class="form-label">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="nama_binaan" name="nama_binaan"
-                                    autocomplete="off" value="<?= $alternatif["nama_binaan"]; ?>"
-                                    placeholder="Nama Lengkap Binaan">
+                                <input type="text" class="form-control" id="nama_binaan" name="nama_binaan" autocomplete="off" value="<?= $alternatif["nama_binaan"]; ?>" placeholder="Nama Lengkap Binaan">
                             </div>
                             <div class="mt-3">
                                 <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
@@ -48,10 +45,10 @@ require 'layouts/sidebar.php';
                                     $sql = mysqli_query($conn, "SELECT * FROM tb_alternatif");
                                     while ($row = mysqli_fetch_assoc($sql)) {
                                     ?>
-                                    <option value="Laki-laki" <?php if ($row["jenis_kelamin"] == "Laki-laki") {
+                                        <option value="Laki-laki" <?php if ($row["jenis_kelamin"] == "Laki-laki") {
                                                                         echo 'selected';
                                                                     } ?>>Laki-laki</option>
-                                    <option value="Perempuan" <?php if ($row["jenis_kelamin"] == "Perempuan") {
+                                        <option value="Perempuan" <?php if ($row["jenis_kelamin"] == "Perempuan") {
                                                                         echo 'selected';
                                                                     } ?>>Perempuan</option>
                                     <?php } ?>
@@ -60,9 +57,7 @@ require 'layouts/sidebar.php';
                         </div>
                         <div class="col-span-12 lg:col-span-6">
                             <label for="alamat" class="form-label">Alamat Lengkap</label>
-                            <textarea class="form-control" name="alamat" id="alamat" autocomplete="off"
-                                placeholder="Alamat Lengkap Binaan" cols="30"
-                                rows="5"><?= $alternatif["alamat"]; ?></textarea>
+                            <textarea class="form-control" name="alamat" id="alamat" autocomplete="off" placeholder="Alamat Lengkap Binaan" cols="30" rows="5"><?= $alternatif["alamat"]; ?></textarea>
                             <button type="submit" name="ubah" class="btn btn-primary float-right mt-5">Ubah
                                 Data</button>
                         </div>

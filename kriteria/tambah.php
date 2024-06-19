@@ -2,34 +2,32 @@
 session_start();
 require '../functions.php';
 
-function tambah_obat($data)
+function tambah_kriteria($data)
 {
     global $conn;
+    $kriteria = $data['kriteria'];
 
-    $nama_obat = $data['nama_obat'];
-    $ket_obat = $data['ket_obat'];
-
-    $query = "INSERT INTO tb_obat
+    $query = "INSERT INTO tb_kriteria
 				VALUES 
-				('','$nama_obat','$ket_obat')";
+				('','$kriteria')";
 
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
 }
 
-//Data Menu
+//Data Kriteria
 if (isset($_POST["tambah"])) {
 
-    if (tambah_obat($_POST) > 0) {
-        $_SESSION['status'] = "Data Obat";
+    if (tambah_kriteria($_POST) > 0) {
+        $_SESSION['status'] = "Data Kriteria";
         $_SESSION['status_icon'] = "success";
         $_SESSION['status_info'] = "Berhasil Terkirim";
-        header("Location: ../obat.php");
+        header("Location: ../kriteria.php");
     } else {
-        $_SESSION['status'] = "Data Obat";
+        $_SESSION['status'] = "Data Kriteria";
         $_SESSION['status_icon'] = "error";
         $_SESSION['status_info'] = "Gagal Terkirim";
-        header("Location: ../obat.php");
+        header("Location: ../kriteria.php");
     }
 }
